@@ -11,12 +11,10 @@ namespace Mobidev\ATGate\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class ATGateFacade extends Facade
+class ATGate extends Facade
 {
     protected static function getFacadeAccessor()
     {
         return 'at-gate';
     }
-
-
 }
