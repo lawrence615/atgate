@@ -15,7 +15,7 @@ class ATGateFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'ATGate';
+        return 'at-gate';
     }
 
 

@@ -27,7 +27,7 @@ class ATGateServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->bind('ATGate', function () {
+        $this->app->bind('at-gate', function () {
             return new ATGate;
         });
     }
