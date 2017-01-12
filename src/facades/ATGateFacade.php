@@ -6,7 +6,7 @@
  * Time: 3:57 PM
  */
 
-namespace Mobidev\ATGate\facades;
+namespace Mobidev\ATGate\Facades;
 
 
 use Illuminate\Support\Facades\Facade;

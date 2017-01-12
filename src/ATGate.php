@@ -6,7 +6,7 @@
  * Time: 4:00 PM
  */
 
-namespace Mobidev\ATGate\facades;
+namespace Mobidev\ATGate;
 
 
 use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGateway;
