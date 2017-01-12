@@ -1,14 +1,19 @@
 {
-    "name": "lawrence615/atgate",
-    "description": "This package interacts with the Africa's Taking API using their own PHP SDK.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Lawrence Macharia",
-            "email": "macharia@devs.mobi"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "lawrence615/atgate",
+  "description": "This package interacts with the Africa's Taking API using their own PHP SDK.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lawrence Macharia",
+      "email": "macharia@devs.mobi"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mobidev\\ATGate\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {}
 }
