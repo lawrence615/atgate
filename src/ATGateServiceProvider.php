@@ -31,7 +31,7 @@ class ATGateServiceProvider extends ServiceProvider
         $this->app->make('Mobidev\ATGate\controllers\ATGateController');
 
 
-        $this->app->bind('atgate', function () {
+        $this->app->bind('ATGate', function () {
             return $this->app->make(ATGate::class);
         });
     }
