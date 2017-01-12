@@ -14,6 +14,6 @@ class ATGateClassFacade
 
     protected static function getFacadeAccessor()
     {
-        return 'atgateclass';
+        return 'atgate';
     }
 }

@@ -12,7 +12,7 @@ namespace Mobidev\ATGate\facades;
 use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGateway;
 use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGatewayException;
 
-class ATGateClass
+class ATGate
 {
 
     protected $gateway;
