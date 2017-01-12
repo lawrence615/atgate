@@ -1,0 +1,14 @@
+{
+    "name": "lawrence615/atgate",
+    "description": "This package interacts with the Africa's Taking API using their own PHP SDK.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lawrence Macharia",
+            "email": "macharia@devs.mobi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
