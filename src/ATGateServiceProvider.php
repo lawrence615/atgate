@@ -32,7 +32,7 @@ class ATGateServiceProvider extends ServiceProvider
         $this->app->make('Mobidev\ATGate\controllers\ATGateController');
 
         App::bind('atgate', function () {
-            return new ATGate();
+            return new ATGate;
         });
     }
 }
