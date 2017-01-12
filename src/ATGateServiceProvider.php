@@ -2,7 +2,6 @@
 
 namespace Mobidev\ATGate;
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 use Mobidev\ATGate\facades\ATGate;
 
@@ -31,7 +30,8 @@ class ATGateServiceProvider extends ServiceProvider
         // Not sure we need this
         $this->app->make('Mobidev\ATGate\controllers\ATGateController');
 
-        App::bind('atgate', function () {
+
+        $this->app->bind('atgate', function () {
             return new ATGate;
         });
     }
