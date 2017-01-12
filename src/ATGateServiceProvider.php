@@ -28,6 +28,7 @@ class ATGateServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // Not sure we need this
         $this->app->make('Mobidev\ATGate\controllers\ATGateController');
 
         App::bind('atgateclass', function () {
