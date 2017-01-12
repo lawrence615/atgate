@@ -22,6 +22,7 @@ class ATGateClass
      */
     public function __construct()
     {
+        // user needs to configure the credentials to use the package
         if (config('username') == 'username' && config('api_key') == null) {
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
