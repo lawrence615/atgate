@@ -31,11 +31,11 @@ class ATGateClass
     }
 
 
-    public static function sendSMS($to, $message)
+    public function sendSMS($to, $message)
     {
 
         try {
-            $results = self::getGateway()->sendMessage($to, $message, config('from'));
+            $results = $this->gateway->sendMessage($to, $message, config('from'));
 
             foreach ($results as $result) {
                 // status is either "Success" or "error message"
