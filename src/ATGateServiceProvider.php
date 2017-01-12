@@ -32,7 +32,7 @@ class ATGateServiceProvider extends ServiceProvider
 
 
         $this->app->bind('atgate', function () {
-            return new ATGate;
+            return $this->app->make(ATGate::class);
         });
     }
 }

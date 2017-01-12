@@ -31,7 +31,7 @@ class ATGate
     }
 
 
-    public  function sendSMS($to, $message)
+    public function sendSMS($to, $message)
     {
 
         try {
@@ -48,7 +48,6 @@ class ATGate
 
         }
     }
-
 
 
 }
