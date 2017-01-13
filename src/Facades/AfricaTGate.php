@@ -11,7 +11,7 @@ namespace Mobidev\ATGate\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class ATGate extends Facade
+class AfricaTGate extends Facade
 {
     protected static function getFacadeAccessor()
     {
