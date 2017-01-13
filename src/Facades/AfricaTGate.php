@@ -1,6 +1,9 @@
 <?php
 
-namespace Illuminate\Support\Facades;
+namespace Mobidev\ATGate\Facades;
+
+
+use Illuminate\Support\Facades\Facade;
 
 /**
  * Class AfricaTGate
