@@ -35,7 +35,7 @@ class AfricaTGate
     {
 
         try {
-            $results = $this->gateway->sendMessage($to, $message, config('from'));
+            $results = $this->gateway->sendMessage($to, $message);
 
             foreach ($results as $result) {
                 // status is either "Success" or "error message"
