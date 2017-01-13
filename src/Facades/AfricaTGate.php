@@ -1,18 +1,18 @@
 <?php
+
+namespace Illuminate\Support\Facades;
+
 /**
- * Created by PhpStorm.
- * User: Lawrence
- * Date: 1/12/17
- * Time: 3:57 PM
+ * Class AfricaTGate
+ * @package Illuminate\Support\Facades
  */
-
-namespace Mobidev\ATGate\Facades;
-
-
-use Illuminate\Support\Facades\Facade;
-
 class AfricaTGate extends Facade
 {
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
     protected static function getFacadeAccessor()
     {
         return 'africatgate';
