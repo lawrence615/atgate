@@ -46,6 +46,7 @@ class AfricaTGate
             }
         } catch (AfricasTalkingGatewayException $africasTalkingGatewayException) {
             echo "Encountered an error while sending: " . $africasTalkingGatewayException->getMessage();
+            echo "Encountered an error while sending: " . $africasTalkingGatewayException->getTrace();
         }
     }
 
