@@ -24,6 +24,7 @@ class ATGate
     {
         // user needs to configure the credentials to use the package
         if (config('username') == 'username' && config('api_key') == null) {
+            echo "Hello";exit;
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
@@ -33,7 +34,6 @@ class ATGate
 
     public function sendSMS($to, $message)
     {
-        echo "Hello";exit;
 
         try {
             $results = $this->gateway->sendMessage($to, $message, config('from'));
