@@ -27,7 +27,7 @@ class AfricaTGate
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
-        $this->gateway = new AfricasTalkingGateway('console', '36c9e15bdbe526395151dc62559e64232af66567ea432cd7042a61f95217fc94');
+        $this->gateway = new AfricasTalkingGateway(config('username'), config('api_key'));
     }
 
 
