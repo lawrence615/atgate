@@ -8,6 +8,7 @@
 
 namespace Mobidev\ATGate;
 
+use Illuminate\Contracts\Config\Repository as Config;
 
 use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGateway;
 use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGatewayException;
@@ -15,22 +16,49 @@ use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGatewayException;
 class AfricaTGate
 {
 
+    /**
+     * @var AfricasTalkingGateway
+     */
     protected $gateway;
+
+
+    /**
+     * @var
+     */
+    protected $username;
+
+
+    /**
+     * @var
+     */
+    protected $api_key;
+
+
+    /**
+     * @var Config
+     */
+    protected $config_handler;
 
     /**
      * ATGateClass constructor.
+     * @param Config $config_handler
+     * @throws \Exception
+     * @internal param $username
+     * @internal param $api_key
      */
-    public function __construct()
+    public function __construct(Config $config_handler)
     {
+
+        $this->config_handler = $config_handler;
+
+
         // user needs to configure the credentials to use the package
-        if (config('username') == 'username' && config('api_key') == null) {
+        if ($this->config_handler->get('username') == 'username' && $this->config_handler->get('api_key') == null) {
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
-        echo 'Username: '. config('username');
-        echo 'API KEY: '. config('api_key');
 
-        $this->gateway = new AfricasTalkingGateway(config('username'), config('api_key'));
+        $this->gateway = new AfricasTalkingGateway($this->config_handler->get('username'), $this->config_handler->get('api_key'));
     }
 
 

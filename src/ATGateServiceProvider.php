@@ -27,8 +27,8 @@ class ATGateServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->bind('africatgate', function () {
-            return new AfricaTGate;
+        $this->app->bind('africatgate', function ($app) {
+            return new AfricaTGate($app['config']);
         });
     }
 }
