@@ -15,21 +15,27 @@ use Mobidev\ATGate\AfricasTalkingGateway\AfricasTalkingGatewayException;
 class AfricaTGate
 {
 
+    protected $gateway;
 
-
-    public function sendSMS($to, $message)
+    /**
+     * ATGateClass constructor.
+     */
+    public function __construct()
     {
-
         // user needs to configure the credentials to use the package
         if (config('username') == 'username' && config('api_key') == null) {
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
-        $gateway = new AfricasTalkingGateway(config('username'), config('api_key'));
+        $this->gateway = new AfricasTalkingGateway(config('username'), config('api_key'));
+    }
 
+
+    public function sendSMS($to, $message)
+    {
 
         try {
-            $results = $gateway->sendMessage($to, $message);
+            $results = $this->gateway->sendMessage($to, $message);
 
             foreach ($results as $result) {
                 // status is either "Success" or "error message"
