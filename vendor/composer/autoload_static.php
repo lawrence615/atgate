@@ -6,9 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit39949337408badac7ec7ef1cb0b6e403
 {
+    public static $prefixLengthsPsr4 = array (
+        'M' => 
+        array (
+            'Mobidev\\ATGate\\' => 15,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Mobidev\\ATGate\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit39949337408badac7ec7ef1cb0b6e403::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit39949337408badac7ec7ef1cb0b6e403::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
