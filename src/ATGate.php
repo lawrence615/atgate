@@ -33,6 +33,7 @@ class ATGate
 
     public function sendSMS($to, $message)
     {
+        echo "Hello";exit;
 
         try {
             $results = $this->gateway->sendMessage($to, $message, config('from'));
