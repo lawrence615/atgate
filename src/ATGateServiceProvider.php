@@ -28,7 +28,7 @@ class ATGateServiceProvider extends ServiceProvider
     {
 
         $this->app->bind('ATGate', function () {
-            return new ATGate;
+            return new AfricaTGate;
         });
     }
 }
