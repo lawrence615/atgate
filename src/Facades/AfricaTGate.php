@@ -15,6 +15,6 @@ class AfricaTGate extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'ATGate';
+        return 'at';
     }
 }
