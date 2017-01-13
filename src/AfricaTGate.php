@@ -45,7 +45,7 @@ class AfricaTGate
                 echo " Cost: " . $result->cost . "\n";
             }
         } catch (AfricasTalkingGatewayException $africasTalkingGatewayException) {
-
+            echo "Encountered an error while sending: " . $africasTalkingGatewayException->getMessage();
         }
     }
 
