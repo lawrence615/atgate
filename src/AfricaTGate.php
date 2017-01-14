@@ -57,6 +57,8 @@ class AfricaTGate
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
+        echo 'Username: ' . $this->config_handler->get('username');
+        echo 'API Key: ' . $this->config_handler->get('api_key');
 
         $this->gateway = new AfricasTalkingGateway($this->config_handler->get('username'), $this->config_handler->get('api_key'));
     }
