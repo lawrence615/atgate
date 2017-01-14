@@ -22,22 +22,6 @@ class AfricaTGate
     protected $gateway;
 
 
-    /**
-     * @var
-     */
-    protected $username;
-
-
-    /**
-     * @var
-     */
-    protected $api_key;
-
-
-    /**
-     * @var Config
-     */
-    protected $config_handler;
 
     /**
      * ATGateClass constructor.
@@ -46,21 +30,16 @@ class AfricaTGate
      * @internal param $username
      * @internal param $api_key
      */
-    public function __construct(Config $config_handler)
+    public function __construct($config_handler)
     {
 
-        $this->config_handler = $config_handler;
-
-
         // user needs to configure the credentials to use the package
-        if ($this->config_handler->get('username') == 'username' && $this->config_handler->get('api_key') == null) {
+        if ($config_handler['username'] == 'username' && $config_handler['api_key'] == null) {
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
-        echo 'Username: ' . $this->config_handler->get('username');
-        echo 'API Key: ' . $this->config_handler->get('api_key');
 
-        $this->gateway = new AfricasTalkingGateway('kejaconsole','36c9e15bdbe526395151dc62559e64232af66567ea432cd7042a61f95217fc94');
+        $this->gateway = new AfricasTalkingGateway($config_handler['username'], $config_handler['api_key']);
     }
 
 
