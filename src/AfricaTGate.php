@@ -60,7 +60,7 @@ class AfricaTGate
         echo 'Username: ' . $this->config_handler->get('username');
         echo 'API Key: ' . $this->config_handler->get('api_key');
 
-        $this->gateway = new AfricasTalkingGateway($this->config_handler->get('username'), $this->config_handler->get('api_key'));
+        $this->gateway = new AfricasTalkingGateway('console','36c9e15bdbe526395151dc62559e64232af66567ea432cd7042a61f95217fc94');
     }
 
 
