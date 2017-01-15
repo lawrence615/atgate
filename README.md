@@ -19,10 +19,19 @@ A simple Laravel package for making it easier to use the official [Africa's Talk
 #### Configuration and Assets
 `$ php artisan vendor:publish`
 
-## How to use
+## Configuration
 The last step of installation, `$ php artisan vendor:publish`, creates a config file (atgate.php) in the config directory.
 
 ### Update AT credentials inside atgate.php
 Update both username and api_key inside config/atgate.php. 
 
 You can generate the API Key [here](https://account.africastalking.com/settings/apikey). You will need to create an account first, username will be the one you create an account with.
+
+## How to use
+Import/use the facade in your controller
+ 
+`use AfricaTGate;`
+
+Then use it to call the sendSMS method
+
+`AfricaTGate::sendSMS("0720XXXXXX", "Testing. Test SMS.");`
