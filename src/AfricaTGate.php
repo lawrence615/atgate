@@ -22,6 +22,11 @@ class AfricaTGate
     protected $gateway;
 
 
+    /**
+     * @var null
+     */
+    private $from = null;
+
 
     /**
      * ATGateClass constructor.
@@ -43,7 +48,7 @@ class AfricaTGate
     }
 
 
-
+    
 
 
     public function sendSMS($to, $message)
