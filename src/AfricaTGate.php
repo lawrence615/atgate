@@ -70,7 +70,7 @@ class AfricaTGate
         try {
             $results = $this->gateway->sendMessage($to, $message, $this->from);
 
-            return $results;
+            return $results[0];
         } catch (AfricasTalkingGatewayException $africasTalkingGatewayException) {
             echo "Encountered an error while sending: " . $africasTalkingGatewayException->getMessage();
         }
