@@ -63,3 +63,11 @@ Import/use the facade in your controller
 ```php
    $response = AfricaTGate::sendSMS("0720XXXXXX", "Testing. Test SMS.");
 ```
+
+2. With Sender Id
+
+```php
+   $response = AfricaTGate::from('Sender_Id')->sendSMS("0720XXXXXX", "Testing. Test SMS.");
+```
+
+
