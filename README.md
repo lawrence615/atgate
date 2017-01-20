@@ -50,7 +50,7 @@ Update both username and api_key inside config/atgate.php.
 
 You can generate the API Key [here](https://account.africastalking.com/settings/apikey). You will need to create an account first, username will be the one you create an account with.
 
-## Usage in New Applications
+## Usage in Applications
 Import/use the facade in your controller
 
  
