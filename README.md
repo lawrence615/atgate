@@ -52,6 +52,7 @@ You can generate the API Key [here](https://account.africastalking.com/settings/
 
 ## Usage in New Applications
 Import/use the facade in your controller
+
  
 ```php
    use AfricaTGate;
