@@ -22,7 +22,6 @@ class AfricaTGate
     protected $gateway;
 
 
-
     /**
      * @var null
      */
@@ -71,14 +70,7 @@ class AfricaTGate
         try {
             $results = $this->gateway->sendMessage($to, $message, $this->from);
 
-
-            foreach ($results as $result) {
-                // status is either "Success" or "error message"
-                echo " Number: " . $result->number;
-                echo " Status: " . $result->status;
-                echo " MessageId: " . $result->messageId;
-                echo " Cost: " . $result->cost . "\n";
-            }
+            return $results;
         } catch (AfricasTalkingGatewayException $africasTalkingGatewayException) {
             echo "Encountered an error while sending: " . $africasTalkingGatewayException->getMessage();
         }
