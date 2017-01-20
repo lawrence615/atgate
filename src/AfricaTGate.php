@@ -21,6 +21,16 @@ class AfricaTGate
      */
     protected $gateway;
 
+    /**
+     * @var
+     */
+    private $to;
+
+    /**
+     * @var
+     */
+    private $message;
+
 
     /**
      * @var null
@@ -35,27 +45,41 @@ class AfricaTGate
      * @internal param $username
      * @internal param $api_key
      */
-    public function __construct($config_handler)
+    public function __construct($config_handler = null)
     {
 
         // user needs to configure the credentials to use the package
-        if ($config_handler['username'] == 'username' && $config_handler['api_key'] == null) {
+        if ($config_handler['username'] == 'username' || empty($config_handler['api_key'])) {
             throw new \Exception('You need your AfricasTalking username and APIKey for any request to the API.');
         }
 
 
-        $this->gateway = new AfricasTalkingGateway($config_handler['username'], $config_handler['api_key']);
+        $this->gateway = new AfricasTalkingGateway($config_handler['username'], $config_handler['api_key'], isset($config_handler['environment']) ? $config_handler['environment'] : "production");
     }
 
 
-    
+    // creator
+    public static function at()
+    {
+        $atg = new AfricaTGate(app('config')->get('atgate'));
+        return $atg;
+    }
+
+    // sender id chain
+    public function from($from)
+    {
+        $this->from = $from;
+        return $this;
+    }
 
 
+    // trigger
     public function sendSMS($to, $message)
     {
 
         try {
-            $results = $this->gateway->sendMessage($to, $message);
+            $results = $this->gateway->sendMessage($to, $message, $this->from);
+
 
             foreach ($results as $result) {
                 // status is either "Success" or "error message"
@@ -69,5 +93,11 @@ class AfricaTGate
         }
     }
 
+
+    // trigger
+    public function sendAirTime($to, $amount)
+    {
+
+    }
 
 }
