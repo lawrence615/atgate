@@ -21,15 +21,6 @@ class AfricaTGate
      */
     protected $gateway;
 
-    /**
-     * @var
-     */
-    private $to;
-
-    /**
-     * @var
-     */
-    private $message;
 
 
     /**
